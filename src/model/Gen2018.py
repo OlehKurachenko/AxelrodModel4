@@ -368,6 +368,83 @@ class NovyMishaAlgo(Algorithm):
         return OrderedDict({"step": 0})
 
 
+class AnyaAlgo(Algorithm):
+    """
+        - step: _in loop for each 4 steps:_
+            - 1: 4
+            - 2: competitor-1
+            - 3: 3
+            - 4: competitor-1
+        - analysis: _none_
+        - reproduction rule: _none_
+    """
+
+    @staticmethod
+    def make_step(data: OrderedDict, prev_competitor: int = -1):
+        if prev_competitor == -1:
+            data["step"] = 0
+        data["step"] += 1
+        if data["step"] == 1:
+            return 4
+        elif data["step"] == 2:
+            return max(prev_competitor - 1, 1)
+        elif data["step"] == 3:
+            return 3
+        data["step"] = 0
+        return max(prev_competitor - 1, 1)
+
+    @staticmethod
+    def analyze_result(data: OrderedDict):
+        pass
+
+    @staticmethod
+    def reproduce(data: OrderedDict):
+        return OrderedDict({"step": 0})
+
+
+class KIAlgo(Algorithm):
+    """
+        - step: _steps 1-7: 2. Then, if there were 3 the same in row, 2 on 3-5,
+        1 on 1-2. Else 1 in any case._
+        - analysis: _none_
+        - reproduction rule: _none_
+    """
+
+    @staticmethod
+    def make_step(data: OrderedDict, prev_competitor: int = -1):
+        if prev_competitor == -1:
+            data["step"] = 0
+            data["competitor"] = []
+        data["step"] += 1
+        if data["step"] < 9:
+            if data["step"] != 1:
+                data["competitor"].append(prev_competitor)
+            return 2
+        elif data["step"] == 10:  # mode 1
+            if prev_competitor >= 3:
+                return 2
+            return 1
+        elif data["step"] == 11:  # mode 2
+            return 1
+        if (data["competitor"][0] == data["competitor"][1] == data["competitor"][2]) or \
+                (data["competitor"][1] == data["competitor"][2] == data["competitor"][3]) or \
+                (data["competitor"][2] == data["competitor"][3] == data["competitor"][4]) or \
+                (data["competitor"][3] == data["competitor"][4] == data["competitor"][5]) or \
+                (data["competitor"][4] == data["competitor"][5] == data["competitor"][6]):
+            data["step"] = 10
+        else:
+            data["step"] = 11
+        return 2
+
+    @staticmethod
+    def analyze_result(data: OrderedDict):
+        pass
+
+    @staticmethod
+    def reproduce(data: OrderedDict):
+        return OrderedDict({"step": 0, "competitor": []})
+
+
 gen2018_algorithms = {
     "vitalia": VitaliaAlgo,
     "kt-1": KT1Algo,
@@ -379,5 +456,7 @@ gen2018_algorithms = {
     "illya-b": IllyaBAlgo,
     "illya-c": IllyaCAlgo,
     "sergey-a": SergeyAAlgo,
-    "novy_misha": NovyMishaAlgo
+    "novy_misha": NovyMishaAlgo,
+    "anya": AnyaAlgo,
+    "ki": KIAlgo
 }

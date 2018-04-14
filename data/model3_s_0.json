@@ -1,0 +1,28 @@
+{
+  "pool_free_id": 5,
+  "pool_size": 200,
+  "pool": [
+    {
+      "type": "eye_for_eye",
+      "id": 0,
+      "data": {}
+    },
+    {
+      "type": "random",
+      "id": 1,
+      "data": {}
+    },
+    {
+      "type": "envy",
+      "id": 2,
+      "data": {}
+    },
+    {
+      "type": "mutable_constant",
+      "id": 4,
+      "data": {
+        "value": 1
+      }
+    }
+  ]
+}

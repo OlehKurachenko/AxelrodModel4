@@ -91,6 +91,37 @@
         "step": 0,
         "competitor": []
       }
+    },
+    {
+      "type": "eye_for_eye",
+      "id": 0,
+      "data": {}
+    },
+    {
+      "type": "random",
+      "id": 1,
+      "data": {}
+    },
+    {
+      "type": "envy",
+      "id": 2,
+      "data": {}
+    },
+    {
+      "type": "analysis",
+      "id": 3,
+      "data": {
+        "step_number": 0,
+        "game_mode": "analysis",
+        "competitor_steps": []
+      }
+    },
+    {
+      "type": "mutable_constant",
+      "id": 4,
+      "data": {
+        "value": 5
+      }
     }
   ]
 }

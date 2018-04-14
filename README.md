@@ -1,8 +1,8 @@
 ## Axlerod Model 4
 
-#### List of algorithms
+### List of algorithms
 
-##### Standart
+#### Standart
 
 1. **eye_for_eye**
     - step: _first step 5, next step the same as competitors previous_
@@ -28,7 +28,7 @@
     - reproduction _rule: 3/5 of population will have the same constant step
     value as parent, 1/5 - +1 (if possible), 1/5 - -1, randomly_
     
-##### Gen 2018
+#### Gen 2018
 
 1. **vitalia**
     - step: _first step: 3, all next: competitor-1_
@@ -115,4 +115,17 @@
     - analysis: _none_
     - reproduction rule: _none_
     
+12. **anya**
+    - step: _in loop for each 4 steps:_
+        - 1: 4
+        - 2: competitor-1
+        - 3: 3
+        - 4: competitor-1
+    - analysis: _none_
+    - reproduction rule: _none_
     
+13. **ki**
+    - step: _steps 1-7: 2. Then, if there were 3 the same in row, 2 on 3-5,
+    1 on 1-2. Else 1 in any case._
+    - analysis: _none_
+    - reproduction rule: _none_

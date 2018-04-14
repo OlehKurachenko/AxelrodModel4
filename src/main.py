@@ -16,15 +16,6 @@ import model.Model as Model
 def run_model_1():
     model1 = Model.Model("../data/model2_s_0.json", "../data/table.json")
     model1.loadAlgorithms(StdAlgo.std_algorithms)
-    # model1.perform_step()
-    # model1.exportState("../data/model2_s_1g.json")
-    # model1.perform_step()
-    # model1.exportState("../data/model2_s_2g.json")
-    # model1.perform_step()
-    # model1.exportState("../data/model2_s_3g.json")
-    # model1.perform_step()
-    # model1.exportState("../data/model2_s_4g.json")
-    # print(model1.statistics())
     for i in range(10):
         model1.perform_step()
         print(str(i) + str(model1.statistics()))
@@ -36,6 +27,21 @@ def run_model_2():
     for i in range(10):
         model2.perform_step()
         print(str(i) + str(model2.statistics()))
+
+def run_model_3():
+    model3 = Model.Model("../data/model_gen2018_s_0.json", "../data/table.json")
+    model3.loadAlgorithms(Gen2018Algo.gen2018_algorithms)
+    model3.loadAlgorithms(StdAlgo.std_algorithms)
+    for i in range(30):
+        model3.perform_step()
+        print(str(i) + str(model3.statistics()))
+
+def run_model_4():
+    model3 = Model.Model("../data/model3_s_0.json", "../data/table.json")
+    model3.loadAlgorithms(StdAlgo.std_algorithms)
+    for i in range(10):
+        model3.perform_step()
+        print(str(i) + str(model3.statistics()))
 
 def interestingPart1():
     print("@@@ Simulation 1:")
@@ -52,5 +58,5 @@ def interestingPart1():
         print(str(i) + str(model2.statistics()))
 
 if __name__ == "__main__":
-    run_model_2()
+    run_model_4()
     # interestingPart1()
