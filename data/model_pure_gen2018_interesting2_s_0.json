@@ -1,0 +1,25 @@
+{
+  "pool_free_id": 3,
+  "pool_size": 200,
+  "pool": [
+    {
+      "type": "vitalia",
+      "id": 0,
+      "data": {}
+    },
+    {
+      "type": "kt-1",
+      "id": 1,
+      "data": {
+        "step": 0,
+        "on1": 0,
+        "on2": 0
+      }
+    },
+    {
+      "type": "kt-2",
+      "id": 2,
+      "data": {}
+    }
+  ]
+}
