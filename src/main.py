@@ -13,9 +13,13 @@ import model.Model as Model
 
 
 if __name__ == "__main__":
-    model1 = Model.Model("../data/model1_s_0.json", "../data/table.json")
+    model1 = Model.Model("../data/model2_s_0.json", "../data/table.json")
     model1.loadAlgorithms(StdAlgo.std_algorithms)
     model1.perform_step()
-    model1.exportState("../data/model1_s_1g.json")
+    model1.exportState("../data/model2_s_1g.json")
     model1.perform_step()
-    model1.exportState("../data/model1_s_2g.json")
+    model1.exportState("../data/model2_s_2g.json")
+    model1.perform_step()
+    model1.exportState("../data/model2_s_3g.json")
+    model1.perform_step()
+    model1.exportState("../data/model2_s_4g.json")
