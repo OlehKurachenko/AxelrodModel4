@@ -1,0 +1,13 @@
+{
+  "pool_free_id": 1,
+  "pool_size": 200,
+  "pool": [
+    {
+      "type": "const",
+      "id": 0,
+      "data": {
+        "const_value": 5
+      }
+    }
+  ]
+}
