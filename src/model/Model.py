@@ -59,16 +59,16 @@ class Model:
                 entity2_algorithm.analyze_result(entity2_data)
                 entity1["points"] += entity1_points
                 entity2["points"] += entity2_points
-        old_pool.sort(key=lambda x: x["points"])
+        old_pool.sort(key=lambda x: x["points"], reverse=True)
         # TODO remove or refactor
-        sys.stdout.write("\033[1;31m")
-        print("Here, on run:")
-        sys.stdout.write("\033[0;0m")
-        print(old_pool)
+        # sys.stdout.write("\033[1;31m")
+        # print("Here, on run:")
+        # sys.stdout.write("\033[0;0m")
+        # print(old_pool)
         # end
         old_pool = old_pool[:int(len(old_pool) * 4 / 5 + 1)]
         new_pool = []
-        for i in range(min(self.__state["pool_size"] / 5, len(old_pool))):
+        for i in range(min(int(self.__state["pool_size"] / 5), len(old_pool))):
             new_entity = OrderedDict()
             new_entity["type"] = old_pool[i]["type"]
             new_entity["id"] = self.__state["pool_free_id"]
@@ -86,3 +86,12 @@ class Model:
     def exportState(self, state_json_filename: str):
         with open(state_json_filename, "w+") as stateJSONFile:
             stateJSONFile.write(json.dumps(self.__state, indent=4))
+
+    def statistics(self):
+        resultMap = {}
+        for entity in self.__state["pool"]:
+            if entity["type"] in resultMap:
+                resultMap[entity["type"]] += 1
+            else:
+                resultMap[entity["type"]] = 1
+        return list(resultMap.items())
