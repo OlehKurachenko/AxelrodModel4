@@ -1,0 +1,127 @@
+{
+  "pool_free_id": 5,
+  "pool_size": 200,
+  "pool": [
+    {
+      "type": "vitalia",
+      "id": 0,
+      "data": {}
+    },
+    {
+      "type": "kt-1",
+      "id": 1,
+      "data": {
+        "step": 0,
+        "on1": 0,
+        "on2": 0
+      }
+    },
+    {
+      "type": "kt-2",
+      "id": 2,
+      "data": {}
+    },
+    {
+      "type": "bb1601",
+      "id": 3,
+      "data": {
+        "step": 0
+      }
+    },
+    {
+      "type": "may048be",
+      "id": 4,
+      "data": {
+        "step": 0
+      }
+    },
+    {
+      "type": "andrew",
+      "id": 5,
+      "data": {
+        "step": 0
+      }
+    },
+    {
+      "type": "illya-a",
+      "id": 5,
+      "data": {
+        "step": 0
+      }
+    },
+    {
+      "type": "illya-b",
+      "id": 5,
+      "data": {
+        "step": 0
+      }
+    },
+    {
+      "type": "illya-c",
+      "id": 5,
+      "data": {
+        "step": 0
+      }
+    },
+    {
+      "type": "sergey-a",
+      "id": 5,
+      "data": {
+        "step": 0
+      }
+    },
+    {
+      "type": "novy_misha",
+      "id": 5,
+      "data": {
+        "step": 0
+      }
+    },
+    {
+      "type": "anya",
+      "id": 5,
+      "data": {
+        "step": 0
+      }
+    },
+    {
+      "type": "ki",
+      "id": 5,
+      "data": {
+        "step": 0,
+        "competitor": []
+      }
+    },
+    {
+      "type": "eye_for_eye",
+      "id": 0,
+      "data": {}
+    },
+    {
+      "type": "random",
+      "id": 1,
+      "data": {}
+    },
+    {
+      "type": "envy",
+      "id": 2,
+      "data": {}
+    },
+    {
+      "type": "analysis",
+      "id": 3,
+      "data": {
+        "step_number": 0,
+        "game_mode": "analysis",
+        "competitor_steps": []
+      }
+    },
+    {
+      "type": "mutable_constant",
+      "id": 4,
+      "data": {
+        "value": 5
+      }
+    }
+  ]
+}
